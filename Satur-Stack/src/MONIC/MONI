@@ -1,0 +1,27 @@
+FUNC:
+def func($x,$y):
+    return $x*$y
+dis->
+COPY_VARIABLE (x)
+COPY_VARIABLE (y)
+SAVE_VARIABLES
+MUL
+STORE_VARIABLE 0 (x*y)
+RESET_VARIABLES
+funcStructure:
+!copy args
+SAVE_VARIABLES
+!funcbody
+RESET_VARIABLES
+(return_value is on [sp+1])
+
+VARIABLE/CONSTANT:
+$a := 5
+#b := 10
+dis->
+GIVE_VARIABLE_NUM 0,5
+GIVE_CONSTANT_NUM 0,10
+var/constStructure:
+$var := value
+#const := value
+
